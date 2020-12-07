@@ -1,0 +1,24 @@
+server:
+  port: 8585
+spring:
+  application:
+    name: config-demo
+#  profiles:
+#    active: native
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/17339835138/piziwty.git
+          username: 17339835138
+          password: wtyljn1314
+          default-label: main
+#          search-paths: master
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8888/eureka/
+  instance:
+    prefer-ip-address: true
+    hostName: ${spring.cloud.client.ip-address}
+    instance-id: http://${spring.cloud.client.ip-address}:${server.port}

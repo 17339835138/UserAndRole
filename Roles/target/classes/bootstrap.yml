@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    config:
+      name: role-role
+      profile: dev
+      discovery:
+        enabled: true
+        service-id: config-demo
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8888/eureka/
